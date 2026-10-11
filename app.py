@@ -1,4 +1,4 @@
-from typing import ClassVar
+from typing import ClassVar, Final
 
 
 class Calculator:
@@ -9,7 +9,7 @@ class Calculator:
 
         calculator.obj_count += 1
 
-        self.HISTORY_FILE = f"calc_history_{calculator.obj_count}.txt"
+        self.HISTORY_FILE: Final = f"calc_history_{calculator.obj_count}.txt"
         self.history: list[str] = self.load_history()
 
     def load_history(self) -> list[str]:
