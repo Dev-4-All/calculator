@@ -106,7 +106,7 @@ def main() -> None:
 
         choice = input("Choose an option: ")
 
-        if choice in ["1", "2", "3", "4"]:
+        if choice in Calculator.operations:
             calc.calculate(choice)
         elif choice == "5":
             calc.show_history()
