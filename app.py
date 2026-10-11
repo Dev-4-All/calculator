@@ -5,11 +5,11 @@ class Calculator:
     obj_count = 0
 
     def __init__(self) -> None:
-        cls = type(self)
+        calculator = type(self)
 
-        cls.obj_count += 1
+        calculator.obj_count += 1
 
-        self.HISTORY_FILE = f"calc_history_{cls.obj_count}.txt"
+        self.HISTORY_FILE = f"calc_history_{calculator.obj_count}.txt"
         self.history: list[str] = self.load_history()
 
     def load_history(self) -> list[str]:
@@ -38,12 +38,12 @@ class Calculator:
             file.writelines(self.history)
 
     def calculate(self, choice: str) -> None:
-        cls = type(self)
+        calculator = type(self)
 
-        a: float = cls.get_number("Enter first number: ")
-        b: float = cls.get_number("Enter second number: ")
+        a: float = calculator.get_number("Enter first number: ")
+        b: float = calculator.get_number("Enter second number: ")
 
-        operator, operation = cls.operations[choice]
+        operator, operation = calculator.operations[choice]
 
         result: float | None = operation(a, b)
         if result is not None:
